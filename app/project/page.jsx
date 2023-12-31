@@ -197,13 +197,16 @@ function page() {
 
             <div className="">
               <div className="flex items-center gap-x-4 justify-center mt-6">
-              <Link href={"/contact"}>
-                <div className="bg-black dark:bg-[#373737] w-fit shadow-md  px-2 rounded-md flex items-center gap-x-2 py-1">
-                  <AiOutlinePlusCircle className="text-white tex-3" />
-                  <span className="text-white  font-semibold">Hire Me</span>
-                </div>
+                <Link href={"/contact"}>
+                  <div className="bg-black dark:bg-[#373737] w-fit shadow-md  px-2 rounded-md flex items-center gap-x-2 py-1">
+                    <AiOutlinePlusCircle className="text-white tex-3" />
+                    <span className="text-white  font-semibold">Hire Me</span>
+                  </div>
                 </Link>
-                <div className="border-neutral-300 shadow-md border dark:border-neutral-700  w-fit h-8 px-2 rounded-md flex items-center gap-x-2 cursor-pointer" onClick={sendEmail} >
+                <div
+                  className="border-neutral-300 shadow-md border dark:border-neutral-700  w-fit h-8 px-2 rounded-md flex items-center gap-x-2 cursor-pointer"
+                  onClick={sendEmail}
+                >
                   <FiCopy className="" />
                   <span className="text-neutral-700  dark:text-white font-semibold">
                     Send Email
@@ -223,25 +226,41 @@ function page() {
               </div>
 
               <div className="flex gap-x-2">
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                <div className="border-neutral-300 bg-white dark:bg-[#373737] dark:border-none shadow-md drop-shadow-md border  w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1 ">
-                  <CiTwitter className="text-neutral-500 dark:text-white" />
-                </div>
+                <a
+                  href="https://www.twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="border-neutral-300 bg-white dark:bg-[#373737] dark:border-none shadow-md drop-shadow-md border  w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1 ">
+                    <CiTwitter className="text-neutral-500 dark:text-white" />
+                  </div>
                 </a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1 ">
-                  <CiInstagram className="text-neutral-500 dark:text-white" />
-                </div>{" "}
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1 ">
+                    <CiInstagram className="text-neutral-500 dark:text-white" />
+                  </div>{" "}
                 </a>
-                <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">
-                <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex justify-center items-center  gap-x-1 ">
-                  <FaGithub className="text-neutral-500 dark:text-white" />
-                </div>
+                <a
+                  href="https://www.github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex justify-center items-center  gap-x-1 ">
+                    <FaGithub className="text-neutral-500 dark:text-white" />
+                  </div>
                 </a>
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-                <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1  ">
-                  <FaLinkedinIn className="text-neutral-500 dark:text-white" />
-                </div>
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1  ">
+                    <FaLinkedinIn className="text-neutral-500 dark:text-white" />
+                  </div>
                 </a>
               </div>
             </div>

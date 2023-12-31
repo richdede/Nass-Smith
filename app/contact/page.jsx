@@ -1,7 +1,6 @@
 import React from "react";
-import { AiOutlineDribbble } from "react-icons/ai";
 import { CiInstagram, CiTwitter } from "react-icons/ci";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 function page() {
   return (
@@ -76,19 +75,43 @@ function page() {
             </div>
 
             <div className="flex gap-x-2">
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="border-neutral-300 bg-white dark:bg-[#373737] dark:border-none shadow-md drop-shadow-md border  w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1 ">
                 <CiTwitter className="text-neutral-500 dark:text-white" />
               </div>
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1 ">
                 <CiInstagram className="text-neutral-500 dark:text-white" />
               </div>{" "}
+            </a>
+            <a
+              href="https://www.github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex justify-center items-center  gap-x-1 ">
-                <AiOutlineDribbble className="text-neutral-500 dark:text-white" />
+                <FaGithub className="text-neutral-500 dark:text-white" />
               </div>
+            </a>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1  ">
                 <FaLinkedinIn className="text-neutral-500 dark:text-white" />
               </div>
-            </div>
+            </a>
+          </div>
           </div>
         </div>
 
