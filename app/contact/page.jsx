@@ -1,26 +1,38 @@
 "use client";
 
-import React, { useRef } from 'react';
+import { motion } from "framer-motion";
+import React, { useState, useRef } from "react";
 import { CiInstagram, CiTwitter } from "react-icons/ci";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import emailjs from '@emailjs/browser';
-
+import emailjs from "@emailjs/browser";
 
 function page() {
-
   const form = useRef();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_pnjdamr', 'template_a3rsb6d', form.current, 'b5NITZj929XVO8TOx')
-    .then(function(response) {
-        console.log('Sent successfuly:', response);
+    setIsLoading(true);
 
+    try {
+      await emailjs.sendForm(
+        "service_pnjdamr",
+        "template_a3rsb6d",
+        form.current,
+        "b5NITZj929XVO8TOx"
+      );
+
+      console.log("Email sent successfully");
+
+      setTimeout(() => {
+        setIsLoading(false);
         window.location.reload();
-      }, (error) => {
-          console.log(error.text);
-      });
+      }, 3000);
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -82,9 +94,13 @@ function page() {
                   ></textarea>
                 </div>
 
-                <button className="w-full p-3 rounded-lg text-white dark:bg-neutral-700 bg-black dark:hover:bg-neutral-800 transition-all ease-in-out duration-500 mt-4 font-InterBo" type="submit" value="Send">
-                  Submit Inquiry
-                </button>
+                <motion.button
+                  className="w-full p-3 rounded-lg text-white dark:bg-neutral-700 bg-black dark:hover:bg-neutral-800 transition-all ease-in-out duration-500 mt-4 font-InterBo"
+                  type="submit"
+                  disabled={isLoading}
+                >
+                  {isLoading ? "Submitting..." : "Submit Inquiry"}
+                </motion.button>
               </form>
             </div>
           </div>
@@ -99,43 +115,43 @@ function page() {
             </div>
 
             <div className="flex gap-x-2">
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="border-neutral-300 bg-white dark:bg-[#373737] dark:border-none shadow-md drop-shadow-md border  w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1 ">
-                <CiTwitter className="text-neutral-500 dark:text-white" />
-              </div>
-            </a>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1 ">
-                <CiInstagram className="text-neutral-500 dark:text-white" />
-              </div>{" "}
-            </a>
-            <a
-              href="https://www.github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex justify-center items-center  gap-x-1 ">
-                <FaGithub className="text-neutral-500 dark:text-white" />
-              </div>
-            </a>
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1  ">
-                <FaLinkedinIn className="text-neutral-500 dark:text-white" />
-              </div>
-            </a>
-          </div>
+              <a
+                href="https://www.twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="border-neutral-300 bg-white dark:bg-[#373737] dark:border-none shadow-md drop-shadow-md border  w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1 ">
+                  <CiTwitter className="text-neutral-500 dark:text-white" />
+                </div>
+              </a>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1 ">
+                  <CiInstagram className="text-neutral-500 dark:text-white" />
+                </div>{" "}
+              </a>
+              <a
+                href="https://www.github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex justify-center items-center  gap-x-1 ">
+                  <FaGithub className="text-neutral-500 dark:text-white" />
+                </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="border-neutral-300 bg-white shadow-md drop-shadow-md border dark:bg-[#373737]  dark:border-none w-9 h-9 px-2 rounded-full flex items-center justify-center gap-x-1  ">
+                  <FaLinkedinIn className="text-neutral-500 dark:text-white" />
+                </div>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -147,7 +163,7 @@ function page() {
             <p className="text-neutral-500">
               By{" "}
               <span className="hover:underline  hover:text-neutral-400 text-neutral-700 dark:text-neutral-300">
-              Nass-Smith
+                Nass-Smith
               </span>
             </p>
           </div>
