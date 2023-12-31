@@ -1,8 +1,28 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from 'react';
 import { CiInstagram, CiTwitter } from "react-icons/ci";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import emailjs from '@emailjs/browser';
+
 
 function page() {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_pnjdamr', 'template_a3rsb6d', form.current, 'b5NITZj929XVO8TOx')
+    .then(function(response) {
+        console.log('Sent successfuly:', response);
+
+        window.location.reload();
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
   return (
     <div className="bg-white top-24 relative dark:bg-[#212121] shadow-md rounded-xl max-w-xl lg:mx-auto mx-4 lg:max-w-xl  max-2xl  md:mx-auto sm:mx-auto lg:px-0 ">
       <div className="p-2 lg:mx-4">
@@ -23,45 +43,49 @@ function page() {
           </div>
 
           <div className="mt-9">
-            <h1 className="text-4xl font-InterBo">Design Inquiry</h1>
+            <h1 className="text-4xl font-InterBo">Project Inquiry</h1>
             <p className="dark:text-[#C0C0C0] my-5">
-              Got an idea and need design help? Reach out now
+              Got an idea and need project help? Reach out now
             </p>
 
             <div>
-              <div className="w-full flex gap-x-4">
-                <input
-                  className="w-1/2 p-3 outline-none border-none rounded-lg dark:bg-[#2C2C2C]/40 
-                  bg-[#F1F4F8]
-                  placeholder-zinc-600"
-                  type="text"
-                  placeholder="Name"
-                />
-                <input
-                  className="w-1/2 p-3
-                  
-                  outline-none border-none rounded-lg dark:bg-[#2C2C2C]/40 bg-[#F1F4F8] placeholder-zinc-600"
-                  type="email"
-                  placeholder="Email"
-                />
-              </div>
-              <div className="mt-2">
-                <textarea
-                  name=""
-                  id=""
-                  cols="40"
-                  className="w-full p-3 
-                  bg-[#F1F4F8]
-                  
-                  outline-none border-none  dark:bg-[#2C2C2C]/40 placeholder-zinc-600 rounded-lg"
-                  rows="6"
-                  placeholder="Message"
-                ></textarea>
-              </div>
+              <form ref={form} onSubmit={sendEmail}>
+                <div className="w-full flex gap-x-4">
+                  <input
+                    className="w-1/2 p-3 outline-none border-none rounded-lg dark:bg-[#2C2C2C]/40 
+                    bg-[#F1F4F8]
+                    placeholder-zinc-600"
+                    type="text"
+                    placeholder="Name"
+                    name="from_name"
+                  />
+                  <input
+                    className="w-1/2 p-3
+                    
+                    outline-none border-none rounded-lg dark:bg-[#2C2C2C]/40 bg-[#F1F4F8] placeholder-zinc-600"
+                    type="email"
+                    placeholder="Email"
+                    name="from_mail"
+                  />
+                </div>
+                <div className="mt-2">
+                  <textarea
+                    name="message"
+                    id=""
+                    cols="40"
+                    className="w-full p-3 
+                    bg-[#F1F4F8]
+                    
+                    outline-none border-none  dark:bg-[#2C2C2C]/40 placeholder-zinc-600 rounded-lg"
+                    rows="6"
+                    placeholder="Message"
+                  ></textarea>
+                </div>
 
-              <button className="w-full p-3 rounded-lg text-white dark:bg-neutral-700 bg-black dark:hover:bg-neutral-800 transition-all ease-in-out duration-500 mt-4 font-InterBo">
-                Submit Inquiry
-              </button>
+                <button className="w-full p-3 rounded-lg text-white dark:bg-neutral-700 bg-black dark:hover:bg-neutral-800 transition-all ease-in-out duration-500 mt-4 font-InterBo" type="submit" value="Send">
+                  Submit Inquiry
+                </button>
+              </form>
             </div>
           </div>
         </div>
