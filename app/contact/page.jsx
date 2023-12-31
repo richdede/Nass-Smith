@@ -95,12 +95,12 @@ function page() {
         <div className="bg-[#F6F8FA] dark:bg-[#2C2C2C] p-6  mt-4 rounded-md">
           <div className="text-center">
             <span className="text-neutral-700 dark:text-neutral-400">
-              © 2023 Joscript Folio – Jo free Templates
+              ©2024 Nass Smith – All Right Reserved
             </span>
             <p className="text-neutral-500">
               By{" "}
               <span className="hover:underline  hover:text-neutral-400 text-neutral-700 dark:text-neutral-300">
-                Joscript
+              Nass-Smith
               </span>
             </p>
           </div>
