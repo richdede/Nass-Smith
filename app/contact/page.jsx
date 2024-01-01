@@ -1,19 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 import { CiInstagram, CiTwitter } from "react-icons/ci";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
 function page() {
-
   const form = useRef();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
-    from_name: '',
-    from_mail: '',
-    message: '',
+    from_name: "",
+    from_mail: "",
+    message: "",
   });
 
   const sendEmail = async (e) => {
@@ -22,16 +21,21 @@ function page() {
     setIsLoading(true);
 
     try {
-      await emailjs.sendForm('service_pnjdamr', 'template_a3rsb6d', form.current, 'b5NITZj929XVO8TOx');
+      await emailjs.sendForm(
+        "service_pnjdamr",
+        "template_a3rsb6d",
+        form.current,
+        "b5NITZj929XVO8TOx"
+      );
 
-      console.log('Email sent successfully');
+      console.log("Email sent successfully");
 
       setTimeout(() => {
         setIsLoading(false);
         window.location.reload();
-      }, 3000); 
+      }, 3000);
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error("Error sending email:", error);
       setIsLoading(false);
     }
   };
@@ -43,7 +47,6 @@ function page() {
       [name]: value,
     }));
   };
-
 
   return (
     <div className="bg-white top-24 relative dark:bg-[#212121] shadow-md rounded-xl max-w-xl lg:mx-auto mx-4 lg:max-w-xl  max-2xl  md:mx-auto sm:mx-auto lg:px-0 ">
@@ -113,7 +116,12 @@ function page() {
                 <motion.button
                   className="w-full p-3 rounded-lg text-white dark:bg-neutral-700 bg-black dark:hover:bg-neutral-800 transition-all ease-in-out duration-500 mt-4 font-InterBo"
                   type="submit"
-                  disabled={isLoading || !formData.from_name || !formData.from_mail || !formData.message}
+                  disabled={
+                    isLoading ||
+                    !formData.from_name ||
+                    !formData.from_mail ||
+                    !formData.message
+                  }
                 >
                   {isLoading ? "Submitting..." : "Submit Inquiry"}
                 </motion.button>
