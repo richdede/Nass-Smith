@@ -50,7 +50,7 @@ function page() {
             <p>Goven</p>
             <p>Rectangle</p>
             <p>Production design, Icon Design</p>
-            <p>2023</p>
+            <p>2024</p>
           </div>
         </div>
 
@@ -231,6 +231,7 @@ function page() {
                 </h1>
               </div>
 
+
               <div className="flex gap-x-2">
                 <a
                   href="https://www.twitter.com"
@@ -280,7 +281,7 @@ function page() {
               <p className="text-neutral-500">
                 By{" "}
                 <span className="hover:underline  hover:text-neutral-400 text-neutral-700 dark:text-neutral-300">
-                Nass-Smith
+                  Nass-Smith
                 </span>
               </p>
             </div>
