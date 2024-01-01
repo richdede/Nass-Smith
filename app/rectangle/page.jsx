@@ -45,12 +45,21 @@ function page() {
             <p>Company</p>
             <p>Project Type</p>
             <p>Year</p>
+            <p>View</p>
           </div>
           <div>
             <p>Goven</p>
             <p>Rectangle</p>
             <p>Production design, Icon Design</p>
             <p>2024</p>
+            <a
+              href="https://nass-smithv2.vercel.app/"
+              target="_blank"
+              className="bg-black dark:bg-[#373737] w-fit shadow-md px-4 py-2 rounded-md flex items-center gap-x-2"
+            >
+              <AiOutlinePlusCircle className="text-white text-3" />
+              <span className="text-white font-semibold">Click Me</span>
+            </a>
           </div>
         </div>
 
@@ -230,7 +239,6 @@ function page() {
                   Follow Me
                 </h1>
               </div>
-
 
               <div className="flex gap-x-2">
                 <a
