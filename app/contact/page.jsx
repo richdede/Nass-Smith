@@ -6,7 +6,7 @@ import { CiInstagram, CiTwitter } from "react-icons/ci";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
-function page() {
+function Page() {
   const form = useRef();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -197,4 +197,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
