@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useState, useRef } from "react";
+import React, { useRef, useState } from 'react';
 import { CiInstagram, CiTwitter } from "react-icons/ci";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
